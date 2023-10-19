@@ -1,0 +1,59 @@
+{
+    "name": "UAV",
+    "world": "SimpleUnderwater",
+    "main_agent": "auv0",
+    "ticks_per_sec": 200,
+    "frames_per_sec": true,
+    "agents":[
+        {
+            "agent_name": "auv0",
+            "agent_type": "UavAgent",
+            "sensors": [
+                {
+                    "sensor_type": "IMUSensor",
+                    "socket": "IMUSocket"
+                },
+                {
+                    "sensor_type": "GPSSensor",
+                    "socket": "IMUSocket",
+                    "Hz": 5,
+                    "configuration":{
+                        "Sigma": 0.5,
+                        "Depth": 1,
+                        "DepthSigma": 0.25
+                    }
+                }
+            ],
+            "control_scheme": 0,
+            "location": [0.0, 2, 15.0],
+            "rotation": [0.0, 0.0, 0.0]
+        },
+        {
+            "agent_name": "auv1",
+            "agent_type": "HoveringAUV",
+            "sensors": [
+                {
+                    "sensor_type": "DVLSensor",
+                    "socket": "DVLSocket"
+                        
+                },
+                {
+                    "sensor_type": "DepthSensor",
+                    "socket": "DepthSocket",
+                    "Hz": 100,
+                    "configuration": {
+                        "Sigma": 0.255
+                    }
+                }
+            ],
+            "control_scheme": 0,
+            "location": [0.0, 0.0, -5.0],
+            "rotation": [0.0, 0.0, 0.0]
+        }
+    ],
+
+    "window_width":  1280,
+    "window_height": 720
+
+}
+
