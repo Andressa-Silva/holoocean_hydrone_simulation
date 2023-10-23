@@ -25,9 +25,10 @@ plt.gca().invert_yaxis()
 plt.gcf().canvas.flush_events()
 
 #### RUN SIMULATION
-command = np.array([0,0,0,0,20])
+command = np.array([10,10,10,10,10,10,10,10])
+
 with holoocean.make(scenario) as env:
-    for i in range(1000):
+    for i in range(1000000):
         env.act("auv0", command)
         state = env.tick()
 
