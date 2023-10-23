@@ -24,12 +24,24 @@
                         "Depth": 1,
                         "DepthSigma": 0.25
                     }
+                },
+                {
+                    "sensor_type": "RangeFinderSensor",
+                    "socket": "IMUSocket",
+                    "Hz": 10,
+                    "configuration": {
+                        "LaserMaxDistance": 10,
+                        "LaserCount": 360,
+                        "LaserAngle": 0,
+                        "LaserDebug": true
+                    }
                 }
             ],
             "control_scheme": 0,
-            "location": [0.0, 2, 15.0],
+            "location": [23.0, 53.0, 2.0],
             "rotation": [0.0, 0.0, 0.0]
         },
+
         {
             "agent_name": "auv1",
             "agent_type": "HoveringAUV",
@@ -52,10 +64,10 @@
                     "socket": "SonarSocket",
                     "Hz": 10,
                     "configuration": {
-                        "OpeningAngle": 10,
+                        "OpeningAngle": 30,
                         "RangeMin": 0.5,
-                        "RangeBins": 100,
-                        "RangeMax": 10,
+                        "RangeBins": 200,
+                        "RangeMax": 30,
                         "RangeSigma": 0.1,
                         "InitOctreeRange": 40,
                         "ViewRegion": true
